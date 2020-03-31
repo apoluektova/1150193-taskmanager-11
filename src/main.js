@@ -1,8 +1,8 @@
 "use strict";
 
+const TASK_COUNT = 3;
 const siteMainElement = document.querySelector(`.main`);
 const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
-const TASK_COUNT = 3;
 
 const createSiteMenuTemplate = () => {
   return (
@@ -365,11 +365,7 @@ const createTaskTemplate = () => {
   );
 };
 
-const creatLoadMoreButtonTemplate = () => {
-  return (
-    `<button class="load-more" type="button">load more</button>`
-  );
-};
+const creatLoadMoreButtonTemplate = () => `<button class="load-more" type="button">load more</button>`;
 
 
 const render = (container, template, place) => {
@@ -385,8 +381,12 @@ const boardTasks = boardContainer.querySelector(`.board__tasks`);
 
 render(boardTasks, createEditTaskTemplate(), `beforeend`);
 
-for (let i = 0; i < TASK_COUNT; i++) {
-  render(boardTasks, createTaskTemplate(), `beforeend`);
-}
+const renderTasks = () => {
+  for (let i = 0; i < TASK_COUNT; i++) {
+    render(boardTasks, createTaskTemplate(), `beforeend`);
+  }
+};
+
+renderTasks();
 
 render(boardContainer, creatLoadMoreButtonTemplate(), `beforeend`);
