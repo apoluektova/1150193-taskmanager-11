@@ -69,7 +69,6 @@ export const createEditTaskTemplate = (task) => {
               <use xlink:href="#wave"></use>
             </svg>
           </div>
-
           <div class="card__textarea-wrap">
             <label>
               <textarea
@@ -79,14 +78,12 @@ export const createEditTaskTemplate = (task) => {
               >${description}</textarea>
             </label>
           </div>
-
           <div class="card__settings">
             <div class="card__details">
               <div class="card__dates">
                 <button class="card__date-deadline-toggle" type="button">
                   date: <span class="card__date-status">${isDateShowing ? `yes` : `no`}</span>
                 </button>
-
                 ${
     isDateShowing ?
       `<fieldset class="card__date-deadline">
@@ -102,11 +99,9 @@ export const createEditTaskTemplate = (task) => {
               </fieldset>`
       : ``
     }
-
                 <button class="card__repeat-toggle" type="button">
                   repeat:<span class="card__repeat-status">yes</span>
                 </button>
-
                 <fieldset class="card__repeat-days">
                   <div class="card__repeat-days-inner">
                   ${repeatingDaysMarkup}
@@ -114,7 +109,6 @@ export const createEditTaskTemplate = (task) => {
                 </fieldset>
               </div>
             </div>
-
             <div class="card__colors-inner">
               <h3 class="card__colors-title">Color</h3>
               <div class="card__colors-wrap">
@@ -122,7 +116,6 @@ export const createEditTaskTemplate = (task) => {
               </div>
             </div>
           </div>
-
           <div class="card__status-btns">
             <button class="card__save" type="submit">save</button>
             <button class="card__delete" type="button">delete</button>
